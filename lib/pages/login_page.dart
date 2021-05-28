@@ -92,9 +92,6 @@ class _LoginPageState extends State<LoginPage> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [Colors.amberAccent[100], Colors.amberAccent]),
-            // borderRadius: BorderRadius.only(
-            //   bottomLeft: Radius.circular(150)
-            // )
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

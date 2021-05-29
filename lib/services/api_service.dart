@@ -65,4 +65,8 @@ class ApiServices {
     Variables.apellidoMaterno = '';
     return false;
   }
+   static Future<bool> updatePass(
+      String passwordold, String password, String empresa) async {
+        return true;
+      }
 }

@@ -87,7 +87,7 @@ class _HistorialPageState extends State<HistorialPage> {
                                 children: <Widget>[
                                   Container(
                                     height: 130.0,
-                                    width: 70.0,
+                                    width: 50.0,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(5),

@@ -57,7 +57,7 @@ class _PerfilPageState extends State<PerfilPage> {
             padding: EdgeInsets.only(bottom: 0, top: 20),
             child: Text(
               "Datos de trabajador",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
             ),
           ),
         ),
@@ -113,7 +113,7 @@ class _PerfilPageState extends State<PerfilPage> {
             padding: EdgeInsets.only(bottom: 5, top: 5),
             child: Text(
               nombres,
-              style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
+              style: TextStyle(fontWeight: FontWeight.normal, fontSize: 13),
             ),
           ),
         ),
@@ -131,7 +131,7 @@ class _PerfilPageState extends State<PerfilPage> {
             padding: EdgeInsets.only(bottom: 5, top: 1),
             child: Text(
               apepaterno,
-              style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
+              style: TextStyle(fontWeight: FontWeight.normal, fontSize: 13),
             ),
           ),
         ),
@@ -149,7 +149,7 @@ class _PerfilPageState extends State<PerfilPage> {
             padding: EdgeInsets.only(bottom: 5, top: 1),
             child: Text(
               apematerno,
-              style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
+              style: TextStyle(fontWeight: FontWeight.normal, fontSize: 13),
             ),
           ),
         ),
@@ -158,14 +158,14 @@ class _PerfilPageState extends State<PerfilPage> {
             padding: EdgeInsets.only(bottom: 1, top: 5),
             child: Text(
               "Cambio de contraseña",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
             ),
           ),
         ),
         Padding(
           padding: EdgeInsets.only(bottom: 5, top: 5, left: 40, right: 40),
           child: FormHelper.inputFieldWidget(
-              context, Icon(Icons.lock), "password", "Contraseña actual",
+              context, Icon(Icons.lock), "password", "Actual",
               (onValidateVal) {
             if (onValidateVal.isEmpty) {
               return "Valor de contraseña no puede estar vacio";
@@ -190,7 +190,7 @@ class _PerfilPageState extends State<PerfilPage> {
         Padding(
           padding: EdgeInsets.only(bottom: 5, top: 5, left: 40, right: 40),
           child: FormHelper.inputFieldWidget(
-              context, Icon(Icons.lock), "password", "Contraseña nueva",
+              context, Icon(Icons.lock), "password", "Nueva",
               (onValidateVal) {
             if (onValidateVal.isEmpty) {
               return "Valor de contraseña no puede estar vacio";
@@ -258,6 +258,9 @@ class _PerfilPageState extends State<PerfilPage> {
               return null;
             },
           ),
+        ),
+        SizedBox(
+          height: 30,
         ),
       ],
     );

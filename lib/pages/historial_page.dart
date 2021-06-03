@@ -63,7 +63,7 @@ class _HistorialPageState extends State<HistorialPage> {
           Padding(
               padding: const EdgeInsets.all(5.0),
               child: listaHistorial != null
-                  ? Expanded(
+                  ? Flexible(
                       child: ListView.builder(
                       physics: ClampingScrollPhysics(),
                       scrollDirection: Axis.vertical,
@@ -80,7 +80,7 @@ class _HistorialPageState extends State<HistorialPage> {
                           ),
                           direction: DismissDirection.endToStart,
                           child: Card(
-                            elevation: 5,
+                            elevation: 15,
                             child: Container(
                               height: 130.0,
                               child: Row(
@@ -101,7 +101,7 @@ class _HistorialPageState extends State<HistorialPage> {
                                     height: 130.0,
                                     child: Padding(
                                       padding:
-                                          EdgeInsets.fromLTRB(10, 15, 0, 0),
+                                          EdgeInsets.fromLTRB(10, 10, 0, 3),
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
@@ -154,7 +154,7 @@ class _HistorialPageState extends State<HistorialPage> {
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 3, 0, 3),
                                             child: Text(
-                                              'Realizó prueba COVID: ' +
+                                              'Prueba COVID: ' +
                                                   listaHistorial[index]
                                                       .prueba_covid
                                                       .toString(),
@@ -166,7 +166,7 @@ class _HistorialPageState extends State<HistorialPage> {
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 3, 0, 3),
                                             child: Text(
-                                              'Fecha prueba COVID: ' +
+                                              'Fecha prueba: ' +
                                                   listaHistorial[index]
                                                       .fecha_prueba
                                                       .replaceAll(
@@ -176,18 +176,18 @@ class _HistorialPageState extends State<HistorialPage> {
                                               overflow: TextOverflow.ellipsis,
                                             ),
                                           ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsets.fromLTRB(0, 3, 0, 3),
-                                            child: Text(
-                                              'Tuvo contacto con personas con COVID: ' +
-                                                  listaHistorial[index]
-                                                      .contacto_covid
-                                                      .toString(),
-                                              style: TextStyle(fontSize: 10),
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
+                                          // Padding(
+                                          //   padding:
+                                          //       EdgeInsets.fromLTRB(0, 3, 0, 3),
+                                          //   child: Text(
+                                          //     'Tuvo contacto con personas con COVID: ' +
+                                          //         listaHistorial[index]
+                                          //             .contacto_covid
+                                          //             .toString(),
+                                          //     style: TextStyle(fontSize: 10),
+                                          //     overflow: TextOverflow.ellipsis,
+                                          //   ),
+                                          // ),
                                         ],
                                       ),
                                     ),

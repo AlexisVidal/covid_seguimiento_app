@@ -33,22 +33,8 @@ class ApiServices {
       }
       final result = await InternetAddress.lookup('www.google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-        retorno=1;
+        retorno=2;
         print('conectado');
-        
-        // try {
-        //   Socket.connect(ipapiURL2, 5000, timeout: Duration(seconds: 5))
-        //       .then((socket) {
-        //       retorno = 1;
-        //       print("Success");
-        //       socket.destroy();
-        //   }).catchError((error) {
-        //     retorno = 2;
-        //     print("Exception on Socket " + error.toString());
-        //   });
-        // } on SocketException {
-        //   retorno = 2;
-        // }
       } else {
         retorno = 0;
       }

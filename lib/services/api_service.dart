@@ -33,7 +33,7 @@ class ApiServices {
       }
       final result = await InternetAddress.lookup('www.google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-        retorno=2;
+        retorno=1;
         print('conectado');
       } else {
         retorno = 0;

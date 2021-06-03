@@ -1,0 +1,5 @@
+google cloud platform
+Nombre del proyecto: seguimientocovid
+ID de proyecto: seguimientocovid-315417
+Número del proyecto: 526813201437
+clave api: AIzaSyC_Bx2N5saBoMoJiXeCDURYK2DGCCWUu6Q

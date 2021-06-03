@@ -1,6 +1,7 @@
 import 'package:covid_seguimiento_app/model/empresa_model.dart';
 import 'package:covid_seguimiento_app/services/ProgressHUD.dart';
 import 'package:covid_seguimiento_app/services/api_service.dart';
+import 'package:covid_seguimiento_app/utils/custom_dialog_box.dart';
 import 'package:covid_seguimiento_app/utils/custom_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
@@ -135,7 +136,7 @@ class _LoginPageState extends State<LoginPage> {
             "Usuario",
             (onValidateVal) {
               if (onValidateVal.isEmpty) {
-                return "Valor de usuario no puede estar vacio";
+              return "Valor de usuario no puede estar vacio";
               }
               return null;
             },
@@ -191,9 +192,20 @@ class _LoginPageState extends State<LoginPage> {
                     globalFormKey.currentState.reset();
                     Navigator.of(context).pushReplacementNamed('/home');
                   }else{
-                    FormHelper.showMessage(context, "Login Error", "Credenciales incorrectas!", "Ok", (){
-                      Navigator.of(context).pop();
-                    });
+                    // FormHelper.showMessage(context, "Login Error", "Credenciales incorrectas!", "Ok", (){
+                    //   Navigator.of(context).pop();
+                    // });
+                    return showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return CustomDialogBox(
+                          title: "Error",
+                          descriptions:
+                              "Credenciales incorrectas! o  no se puede conectar con el servidor!",
+                          text: "OK",
+                        );
+                      },
+                    );
                   }
                 });
               }

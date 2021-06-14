@@ -345,7 +345,7 @@ class _RegistroPageState extends State<RegistroPage> {
         Padding(
           padding: EdgeInsets.only(bottom: 5, top: 5, left: 40),
           child: Text(
-            "¿Te has realizado la prueva Covid en los ultimos 14 dias?",
+            "¿Te has realizado la prueba Covid en los ultimos 14 dias?",
             textAlign: TextAlign.left,
             style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
           ),
@@ -386,7 +386,7 @@ class _RegistroPageState extends State<RegistroPage> {
         Padding(
           padding: EdgeInsets.only(bottom: 5, top: 5, left: 40),
           child: Text(
-            "Has tenido contacto reciente con alguien con COVID 19 confirmado en los ultimos 14 dias?",
+            "¿Has tenido contacto reciente con alguien con COVID 19 confirmado en los ultimos 14 dias?",
             textAlign: TextAlign.left,
             style: TextStyle(fontWeight: FontWeight.normal, fontSize: 14),
           ),
@@ -530,7 +530,7 @@ class _RegistroPageState extends State<RegistroPage> {
       setState(() {
         _currentPosition = currentLocation;
         if (_currentPosition != null) {
-          ubicacion = _currentPosition.latitude.toString() +
+          ubicacion = _currentPosition.latitude.toString() +','+
               _currentPosition.longitude.toString();
         }
         _initialcameraposition =

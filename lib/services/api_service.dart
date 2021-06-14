@@ -27,9 +27,9 @@ class ApiServices {
     int retorno = 1;
     try {
       if (empresa.trim().toUpperCase() == 'VILOCRU SAC') {
-        apiURL = apiURLV;
+        apiURL = apiURLV2;
       } else {
-        apiURL = apiURLC;
+        apiURL = apiURLC2;
       }
       final result = await InternetAddress.lookup('www.google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
@@ -53,9 +53,9 @@ class ApiServices {
       return false;
     } else if (conexion == 1) {
       if (empresa.trim().toUpperCase() == 'VILOCRU SAC') {
-        apiURL = apiURLV2;
+        apiURL = apiURLV;
       } else {
-        apiURL = apiURLC2;
+        apiURL = apiURLC;
       }
     } else if (conexion == 2) {
       if (empresa.trim().toUpperCase() == 'VILOCRU SAC') {
@@ -66,7 +66,7 @@ class ApiServices {
     }
 
     String encoded = conviertePass(password);
-Variables.apiUrl = apiURL;
+    Variables.apiUrl = apiURL;
     var response = await client.post(Uri.parse("$apiURL/Usuario/loginflutter"),
         headers: requestHeaders,
         body: {"IDUSUARIO": username, "PASSWORD": encoded});

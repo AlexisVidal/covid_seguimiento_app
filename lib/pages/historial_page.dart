@@ -4,6 +4,7 @@ import 'package:covid_seguimiento_app/services/api_service.dart';
 import 'package:covid_seguimiento_app/utils/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:map_launcher/map_launcher.dart';
 
 class HistorialPage extends StatefulWidget {
   @override
@@ -16,6 +17,7 @@ class _HistorialPageState extends State<HistorialPage> {
   var empresaselected = Variables.empresa;
   bool isApiCallProcess = false;
   List<SeguimientoModel> listaHistorial = Variables.listaHistorial;
+
   @override
   void initState() {
     //getHistorial();
@@ -135,15 +137,13 @@ class _HistorialPageState extends State<HistorialPage> {
                                           Padding(
                                             padding:
                                                 EdgeInsets.fromLTRB(0, 3, 0, 3),
-                                                
                                             child: Text(
                                               'Sintomas: ' +
                                                   listaHistorial[index]
                                                       .sintomas
                                                       .replaceAll('{', '')
                                                       .replaceAll('}', '')
-                                                      .toString()
-                                                      ,
+                                                      .toString(),
                                               maxLines: 1,
                                               overflow: TextOverflow.fade,
                                               softWrap: false,
@@ -177,17 +177,15 @@ class _HistorialPageState extends State<HistorialPage> {
                                             ),
                                           ),
                                           // Padding(
-                                          //   padding:
-                                          //       EdgeInsets.fromLTRB(0, 3, 0, 3),
-                                          //   child: Text(
-                                          //     'Tuvo contacto con personas con COVID: ' +
-                                          //         listaHistorial[index]
-                                          //             .contacto_covid
-                                          //             .toString(),
-                                          //     style: TextStyle(fontSize: 10),
-                                          //     overflow: TextOverflow.ellipsis,
-                                          //   ),
-                                          // ),
+                                          //     padding: EdgeInsets.fromLTRB(
+                                          //         0, 3, 0, 3),
+                                          //     child: FlatButton(
+                                          //       textColor:
+                                          //           Colors.red, // foreground
+                                          //       onPressed: () {},
+                                          //       child: Text(
+                                          //           'FlatButton with custom foreground/background'),
+                                          //     )),
                                         ],
                                       ),
                                     ),
@@ -212,5 +210,24 @@ class _HistorialPageState extends State<HistorialPage> {
   // getHistorial() async{
   //   listaHistorial = await ApiServices.getHistorial();
   // }
-
+  openLocation(String location) async {
+    double lat = 0;
+    double long = 0;
+    if (location == '') {
+      final split = location.split(',');
+      final Map<int, String> values = {
+        for (int i = 0; i < split.length; i++) i: split[i]
+      };
+      lat = double.parse(values[0]);
+      long = double.parse(values[1]);
+    }
+    if (await MapLauncher.isMapAvailable(MapType.google)) {
+      await MapLauncher.launchMap(
+        mapType: MapType.google,
+        coords: Coords(lat, long),
+        title: 'Registro',
+        description: '',
+      );
+    }
+  }
 }

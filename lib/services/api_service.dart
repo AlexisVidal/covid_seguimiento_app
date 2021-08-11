@@ -16,9 +16,9 @@ class ApiServices {
   static String apiURLV = 'http://192.168.1.3:5000';
   static String ipapiURL = '192.168.1.3';
   static String apiURLC = 'http://192.168.1.3:9000';
-  static String apiURLV2 = 'http://181.65.145.74:5000';
-  static String ipapiURL2 = '181.65.145.74';
-  static String apiURLC2 = 'http://181.65.145.74:9000';
+  static String apiURLV2 = 'http://:5000';
+  static String ipapiURL2 = '';
+  static String apiURLC2 = 'http://:9000';
   static Map<String, String> requestHeaders = {
     'Content-type': 'application/x-www-form-urlencoded'
   };
